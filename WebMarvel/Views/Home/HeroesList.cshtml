@@ -1,0 +1,18 @@
+﻿
+@model List<Heroes>
+
+<link rel="stylesheet" href="~/css/pace-theme-minimal.css" />
+
+@foreach (var hero in @Model)
+{
+    <div style="overflow: hidden; margin-top: 50px;">
+        <div style="float: left; margin-right: 50px;">
+            <img src="@hero.UrlImage" height="200" width="200" />
+        </div>
+        <div style="margin-left: 50px;">
+            <h2><a target="_blank" href="@hero.UrlWiki">@hero.Name</a></h2>
+            <p>@hero.Description</p>
+        </div>
+    </div>
+}
+

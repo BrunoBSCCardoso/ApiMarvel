@@ -1,0 +1,41 @@
+﻿@model List<Heroes>
+
+@{
+    ViewData["Title"] = "Home Page";
+    var AllLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+}
+
+<link rel="stylesheet" href="~/css/pace-theme-minimal.css" />
+
+@foreach (var letter in AllLetters)
+{
+    <span>|</span><a href="#" id="@letter" class="link_alphabetic" onclick="GetHeroesByLetter(@letter);"> @letter </a>
+}
+
+<div id="div-list-heroes">
+    @Html.Partial("HeroesList", Model);
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+
+        function GetHeroesByLetter(event) {
+
+            var letter = event.id;
+
+            $.ajax({
+                type: "POST",
+                url: "/Home/GetHeroesByLetter",
+                dataType: "html",
+                data: { letter: event.id},
+                success: function (response) {
+                    $("#div-list-heroes").html(response);
+                },
+                error: function (response) {
+
+                }
+            });
+        }
+
+    </script>
+}
