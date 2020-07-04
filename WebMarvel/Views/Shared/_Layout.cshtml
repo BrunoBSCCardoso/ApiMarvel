@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome Avenger</title>
     <link rel="shortcut icon" type="image/x-icon" href="~/image/icon-iron-man-head.png" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/searchButton.css"/>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -17,37 +20,27 @@
               crossorigin="anonymous"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
     </environment>
-    <link rel="stylesheet" href="~/css/site.css" />
 
     <script src="~/lib/jquery/dist/jquery.js"></script>
-    <script src="~/lib/jquery-autocomplete/dist/jquery-autocomplete.js"></script>
+    <script src="~/lib/jquery-autocomplete/dist/jquery.autocomplete.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
-
-    <script src="~/js/pace.js"></script>
-    <link rel="stylesheet" href="~/css/pace-theme-minimal.css" />
 
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
-            <div class="container">
-                <a href="@Url.Action("Index","Home")">
-                    <img id="logo-image" width="200" height="70" src="~/image/logo-marvel-gif.gif">
-                </a>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                    </ul>
+            <div class="container col-12">
+
+                <div class="col-sm-8">
+                    <a href="@Url.Action("Index","Home")">
+                        <img id="logo-image" width="200" height="70" src="~/image/logo-marvel-gif.gif">
+                    </a>
                 </div>
 
-                <div class="bg-light rounded rounded-pill shadow-sm mb-5">
-                    <div class="input-group">
-                        <input id="input-searchHeroes" style="width:300px" type="search" placeholder="What're you searching for?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
-                        <div class="input-group-append">
-                            <button id="btn-searchCharacter" onclick="GetHeroesByName();" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
-                        </div>
-                    </div>
-                </div>
+                <form>
+                    <input id="input-searchHeroes" type="search">
+                    <i class="fa fa-search"></i>
+                </form>
 
             </div>
         </nav>

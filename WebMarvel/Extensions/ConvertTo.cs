@@ -24,6 +24,17 @@ namespace WebMarvel.Services
             return heroes;
         }
 
+        public static List<string> ConvertDynamicToHeroesNameObject(dynamic heroesCollection)
+        {
+            List<string> nameHeroes = new List<string>();
+
+            foreach (var hero in heroesCollection.data.results)
+            {
+                nameHeroes.Add(hero.name);
+            }
+
+            return nameHeroes;
+        }
 
     }
 }

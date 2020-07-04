@@ -77,5 +77,26 @@ namespace WebMarvel.Controllers
 
         }
 
+        [HttpPost]
+        public JsonResult GetHeroesNameToAutoComplete(string name)
+        {
+            List<string> heroesName = new List<string>();
+
+            try
+            {
+                if (!String.IsNullOrEmpty(name))
+                {
+                    heroesName = ConvertTo.ConvertDynamicToHeroesNameObject(_serviceMarvel.GetCharacterByName(name).Result);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return Json(heroesName);
+
+        }
+
     }
 }

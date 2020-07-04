@@ -5,7 +5,6 @@ $(document).keypress(function (e) {
     }
 });
 
-
 function GetHeroesByName() {
 
     var name = $("#input-searchHeroes").val();
@@ -24,11 +23,28 @@ function GetHeroesByName() {
     });
 }
 
-$('#input-searchHeroes').autocomplete({
-    serviceUrl: '/Home/GetHeroesByName',
-    onSelect: function (suggestion) {
-        
-    }
-});
+
+
+//function GetHeroesToAutoComplete() {
+
+//    var name = $("#input-searchHeroes").val();
+//    name = (name == undefined ? "" : name);
+
+//    if (name.length >= 3) {
+
+//        $.ajax({
+//            type: "POST",
+//            url: "/Home/GetHeroesNameToAutoComplete",
+//            dataType: "json",
+//            data: { name: name },
+//            success: function (response) {
+//                alert("Sucess");
+//            },
+//            error: function (response) {
+
+//            }
+//        });
+//    }
+//}
 
 
