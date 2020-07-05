@@ -1,4 +1,12 @@
 ﻿
+$(document).ready(function () {
+    $("#content").scroll(function () {
+        if ($(this).scrollTop() + $(this).height() == $(this).get(0).scrollHeight) {
+
+        }
+    });
+});
+
 $(document).keypress(function (e) {
     if (e.which == 13) {
         GetHeroesByName();
